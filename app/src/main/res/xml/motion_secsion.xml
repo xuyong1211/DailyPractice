@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Transition android:id="@+id/transition"
+        app:duration="300"
+        app:constraintSetStart="@id/close"
+        app:constraintSetEnd="@id/open"
+        >
+        <OnClick app:clickAction="toggle"
+            app:targetId="@+id/cl_content"
+
+            />
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/close"
+        >
+        <Constraint
+            android:id="@+id/tv_hello"
+            >
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="parent"
+                android:background="@color/teal_200"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/cl_bottom">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="parent"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/open"
+        >
+        <Constraint
+            android:id="@+id/tv_hello"
+            >
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/teal_200"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/cl_bottom">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
