@@ -1,0 +1,63 @@
+
+buildscript {
+    apply from:file('version.gradle')
+
+    repositories {
+        mavenCentral()
+        maven { url 'http://developer.huawei.com/repo/' }
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven{ url 'https://maven.aliyun.com/repository/public'}
+        maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven{  url "D://localmaven"}
+        mavenLocal()
+//        maven{
+//            url 'http://192.168.110.164:8081/nexus/content/repositories/whxdapp/'
+//            credentials{
+//                username USER_NAME
+//                password PASS_WORD
+//            }
+//        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$buildVersion.KOTLIN_VERSION"
+        classpath 'com.huawei.agconnect:agcp:1.6.0.300'
+
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'http://developer.huawei.com/repo/' }
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven{ url 'https://maven.aliyun.com/repository/public'}
+        maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven{  url "D://localmaven"}
+        flatDir {
+            dirs 'libs'
+        }
+//        maven{
+//            url 'http://192.168.110.164:8081/nexus/content/repositories/whxdapp/'
+//            credentials{
+//                username USER_NAME
+//                password PASS_WORD
+//            }
+//        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+

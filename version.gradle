@@ -1,0 +1,137 @@
+ext.deps = [:]
+
+def buildVersion = [:]
+    buildVersion.VERSION_CODE = 2
+    buildVersion.VERSION_NAME = "1.0.1"
+    buildVersion.COMPILESDK_VERSION = 29
+    buildVersion.BUILDTOOLS_VERSION = "29.0.3"
+    buildVersion.MINSDK_VERSION = 19
+    buildVersion.TARGETSDK_VERSION = 29
+    buildVersion.KOTLIN_VERSION = '1.5.10'
+    ext.buildVersion = buildVersion
+
+def version = [:]
+    version.junit = '4.12'
+    version.runner = '1.2.0'
+    version.espresso = '3.2.0'
+    version.appcompat = '1.1.0'
+    version.constraintlayout = '2.1.0-beta02'
+    version.swiperefreshlayout = '1.1.0'
+    version.cardview = '1.0.0'
+    version.recyclerview = '1.2.0-alpha03'
+    version.material = '1.3.0-alpha01'
+    version.multidex = '2.0.1'
+    version.room_version = '2.3.0'
+    version.core_ktx = '1.5.0'
+    version.arouter = '1.5.0'
+    version.arouter_compiler = '1.2.2'
+    version.okhttp = '3.11.0'
+    version.logging_interceptor = '3.8.1'
+    version.retrofit = '2.1.0'
+    version.adapter_rxjava2 = '2.2.0'
+    version.converter_gson = '2.9.0'
+    version.rxjava = '2.0.1'
+    version.gson = '2.8.6'
+    version.javax_annotation_api = '1.3.2'
+    version.rxbinding = '2.1.1'
+    version.banner = '2.2.2'
+    version.glide = '4.11.0'
+    version.fastjson = '1.2.71'
+    version.MarqueeView = '1.4.1'
+    version.eventbus = '3.2.0'
+    version.hms_scan = '2.4.0.301'
+    version.picture_library = 'v2.5.8'
+    version.sonic = '3.1.0'
+    version.flowlayout = '1.1.2'
+    version.utilcodex = '1.30.6'
+    version.PermissionHelper = '0.0.1'
+    version.leakcanary = '2.6'
+    version.base = '1.0.0'
+    version.locallibs = '1.0.0'
+    version.wechat = '6.7.9'
+    version.calendarview = '3.6.8'
+
+
+//其他依赖
+def deps = [:]
+    deps.app_compact = "androidx.appcompat:appcompat:$version.appcompat"
+    deps.constraintlayout = "androidx.constraintlayout:constraintlayout:$version.constraintlayout"
+    deps.core_ktx = "androidx.core:core-ktx:$version.core_ktx"
+    deps.cardview = "androidx.cardview:cardview:$version.cardview"
+    deps.material = "com.google.android.material:material:$version.material"
+    deps.multidex = "androidx.multidex:multidex:$version.multidex"
+    deps.recyclerview = "androidx.recyclerview:recyclerview:$version.recyclerview"
+    deps.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$version.swiperefreshlayout"
+
+    deps.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$version.rxbinding"
+    deps.utilcodex = "com.blankj:utilcodex:$version.utilcodex"
+    deps.PermissionHelper = "io.github.xuyong1211:PermissionHelper:$version.PermissionHelper"
+    deps.eventbus = "org.greenrobot:eventbus:$version.eventbus"
+
+    deps.hms_scan = "com.huawei.hms:scan:$version.hms_scan"
+    deps.PictureSelector = "com.github.LuckSiege.PictureSelector:picture_library:$version.picture_library"
+    deps.sonic = "com.tencent.sonic:sdk:$version.sonic"  //tencent webview
+    deps.flowlayout = "com.hyman:flowlayout-lib:$version.flowlayout"
+    deps.banner = "io.github.youth5201314:banner:$version.banner"
+    deps.MarqueeView = "com.sunfusheng:MarqueeView:$version.MarqueeView"
+    deps.fastjson = "com.alibaba:fastjson:$version.fastjson"
+    deps.gson = "com.google.code.gson:gson:$version.gson"
+    deps.leakcanary = "com.squareup.leakcanary:leakcanary-android:$version.leakcanary"
+    deps.wechat = "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$version.wechat"
+    deps.calendarview = "com.haibin:calendarview:$version.calendarview"
+
+def test = [:]
+    test.junit = "junit:junit:$version.junit"
+    test.runner = "androidx.test:runner:$version.runner"
+    test.espresso = "androidx.test.espresso:espresso-core:$version.espresso"
+    deps.test = test
+
+def glide = [:]
+    glide.glide_api = "com.github.bumptech.glide:glide:$version.glide"
+    glide.glide_compiler = "com.github.bumptech.glide:compiler:$version.glide"
+    deps.glide = glide
+
+def room = [:]
+    room.room_runtime = "androidx.room:room-runtime:$version.room_version"
+    room.room_ktx = "androidx.room:room-ktx:$version.room_version"
+    room.room_rxjava2 = "androidx.room:room-rxjava2:$version.room_version"
+    room.room_guava = "androidx.room:room-guava:$version.room_version"
+    room.room_compiler = "androidx.room:room-compiler:$version.room_version"
+    deps.room = room
+
+def aRouter = [:]
+    aRouter.arouter_api = "com.alibaba:arouter-api:$version.arouter"
+    aRouter.arouter_compiler = "com.alibaba:arouter-compiler:$version.arouter_compiler"
+    deps.aRouter = aRouter
+
+def okHttp = [:]
+    okHttp.okhttp_api = "com.squareup.okhttp3:okhttp:$version.okhttp"
+    okHttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$version.logging_interceptor"
+    deps.okHttp = okHttp
+
+def retrofit = [:]
+    retrofit.retrofit = "com.squareup.retrofit2:retrofit:$version.retrofit"
+    retrofit.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$version.adapter_rxjava2"
+    retrofit.converter_gson = "com.squareup.retrofit2:converter-gson:$version.converter_gson"
+    deps.retrofit = retrofit
+
+def rxjava = [:]
+    rxjava.rxjava = "io.reactivex.rxjava2:rxjava:$version.rxjava"
+    rxjava.rxandroid = "io.reactivex.rxjava2:rxandroid:$version.rxjava"
+    rxjava.javax_annotation_api = "javax.annotation:javax.annotation-api:$version.javax_annotation_api"
+    deps.rxjava = rxjava
+
+def whxd = [:] //私服依赖
+    whxd.base = "com.whxd.www:base:$version.base"
+    whxd.jdPaySDK = "com.whxd.www:jdPaySDK:$version.locallibs"
+    whxd.alipaySdk = "com.whxd.www:alipaySdk-15.7.9:$version.locallibs"
+    whxd.ydAds = "com.whxd.www:ydAds:$version.locallibs"
+    deps.whxd = whxd
+
+
+    ext.deps = deps
+
+
+
+
+

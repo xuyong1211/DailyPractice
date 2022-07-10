@@ -1,0 +1,52 @@
+apply plugin: 'maven'
+Properties gradleProperties = new Properties()
+gradleProperties.load(project.rootProject.file("gradle.properties").newDataInputStream())
+
+def POM_URL = gradleProperties.getProperty("POM_URL")
+def GROUP_ID = gradleProperties.getProperty("GROUP_ID")
+def USER_NAME = gradleProperties.getProperty("USER_NAME")
+def PASS_WORD = gradleProperties.getProperty("PASS_WORD")
+
+
+Properties projectGradleProperties = new Properties()
+projectGradleProperties.load(project.file("gradle.properties").newDataInputStream())
+
+def POM_ARTIFACT_ID = projectGradleProperties.getProperty("POM_ARTIFACT_ID")
+def VERSION_NAME = projectGradleProperties.getProperty("VERSION_NAME")
+def DESCRIPTION = projectGradleProperties.getProperty("DESCRIPTION")
+
+println("maven_upload POM_URL" + POM_URL)
+println("maven_upload GROUP_ID" + GROUP_ID)
+println("maven_upload POM_ARTIFACT_ID" + POM_ARTIFACT_ID)
+println("maven_upload VERSION_NAME" + VERSION_NAME)
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer{
+            //本地仓库
+            repository(url : "file://localhost/"+"D:\\localmaven"){
+                //公司maven私服
+//            repository(url : "http://192.168.110.164:8081/nexus/content/repositories/whxdapp/"){
+                authentication(userName:USER_NAME,password : PASS_WORD)
+            }
+            pom.project {
+                version VERSION_NAME
+                artifactId POM_ARTIFACT_ID
+                groupId GROUP_ID
+                packaging 'aar'
+                description DESCRIPTION
+            }
+
+            pom.whenConfigured{ pom->
+                pom.dependencies.forEach{ dep->
+                    if(dep.getVersion() == "unspecified"){
+                        dep.setGroupId(GROUP_ID)
+                        dep.setVersion(VERSION_NAME)
+
+                    }
+                }
+            }
+        }
+    }
+}

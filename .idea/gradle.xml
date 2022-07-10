@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/bbs" />
+            <option value="$PROJECT_DIR$/busioffice" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/custombus" />
+            <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/livebus" />
+            <option value="$PROJECT_DIR$/localLibs" />
+            <option value="$PROJECT_DIR$/localLibs/payways" />
+            <option value="$PROJECT_DIR$/localLibs/payways/alipaySdk-15.7.9-20200727142846" />
+            <option value="$PROJECT_DIR$/localLibs/payways/jdPaySDK_Android_JDMall" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/news_9.0.0.2021071525" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/oaid_sdk_1.0.25" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_1.0.11" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_5.0.16.11.5929" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_jd_1.2.4" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_jd_adapt_1.0.0.0010" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_ks_adapt_1.0.0.0006" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_ks_all_3.3.18.1" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_to_adapt_1.0.0.0016" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_tt_3.7.0.2" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_tt_adapt_1.0.0.5959" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_tx_4.373.1243" />
+            <option value="$PROJECT_DIR$/localLibs/ydAds/yd_ad_tx_adapt_1.0.0.5955" />
+            <option value="$PROJECT_DIR$/projectConfig" />
+            <option value="$PROJECT_DIR$/qrpay" />
+            <option value="$PROJECT_DIR$/user" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
