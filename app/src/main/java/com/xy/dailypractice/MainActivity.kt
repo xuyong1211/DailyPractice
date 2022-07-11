@@ -13,6 +13,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.TranslateAnimation
+import android.widget.Toast
 import com.xy.dailypractice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
         var animationDrawable = viewBinding.ivGif.drawable as AnimationDrawable
         animationDrawable.isOneShot = true
+
+        viewBinding.textView.setOnClickListener {
+            Log.d("MyGroup","click")
+        }
+        viewBinding.myGroup.pullUpListener = {
+            Toast.makeText(this, "上拉", Toast.LENGTH_SHORT).show()
+        }
 //        animationDrawable.start()
 
 
