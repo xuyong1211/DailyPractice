@@ -24,11 +24,11 @@ class DialogActivity  : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.button.setOnClickListener {
-//            MyDialog().show(supportFragmentManager,"")
-            finish()
-            handler.post {
-                exitProcess(0)
-            }
+            MyDialog().show(supportFragmentManager,"")
+//            finish()
+//            handler.post {
+//                exitProcess(0)
+//            }
         }
     }
 
@@ -53,6 +53,40 @@ class MyDialog : DialogFragment(){
         }?.setBackgroundDrawableResource(R.color.transparent)
         return inflate
     }
+
+//    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+//        var animation: TranslateAnimation? = null
+//        if (transit === FragmentTransaction.TRANSIT_FRAGMENT_OPEN) {
+//            animation = if (enter) {
+//                TranslateAnimation(
+//                    Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 0f,
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 0f
+//                )
+//            } else {
+//                TranslateAnimation(
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, -1f,
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 0f
+//                )
+//            }
+//        } else if (FragmentTransaction.TRANSIT_FRAGMENT_CLOSE == transit) {
+//            animation = if (enter) {
+//                TranslateAnimation(
+//                    Animation.RELATIVE_TO_SELF, -1f, Animation.RELATIVE_TO_SELF, 0f,
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 0f
+//                )
+//            } else {
+//                TranslateAnimation(
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f,
+//                    Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 0f
+//                )
+//            }
+//        }
+//        if (animation == null) {
+//            animation = TranslateAnimation(0f, 0f, 0f, 0f)
+//        }
+//        animation.duration = 300
+//        return animation
+//    }
 
 
 }
