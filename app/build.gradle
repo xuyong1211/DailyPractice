@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -44,4 +45,22 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.6'
     implementation 'xyz.doikki.android.dkplayer:player-exo:3.3.6'
+    // Okhttp库
+    api deps.okHttp.okhttp_api
+    api deps.okHttp.logging_interceptor
+
+    // Retrofit库
+    api deps.retrofit.retrofit
+    api deps.retrofit.adapter_rxjava2
+    api deps.retrofit.converter_gson
+
+    //RxJava
+    api deps.rxjava.rxjava
+    api deps.rxjava.rxandroid
+    api deps.rxjava.javax_annotation_api
+
+    //Glide
+    api deps.glide.glide_api
+    annotationProcessor deps.glide.glide_compiler
+    kapt deps.glide.glide_compiler
 }
