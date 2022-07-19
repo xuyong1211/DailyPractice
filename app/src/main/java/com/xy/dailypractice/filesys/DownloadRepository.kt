@@ -53,17 +53,21 @@ object DownloadRepository {
 
 //                        //    MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 ////        MediaStore.Video.Media.EXTERNAL_CONTENT_URI
-                        val os = prepareOutPutStream(filtName,fileType)
-                        if(os !=null){
-                            fos = os
-                        }else{
-                            throw java.lang.Exception("outStream is null")
+//                        val os = prepareOutPutStream(filtName,fileType)
+//                        if(os !=null){
+//                            fos = os
+//                        }else{
+//                            throw java.lang.Exception("outStream is null")
+//                        }
+                        if(dir == MyApplication.Instant.applicationContext.filesDir.absolutePath){
+                            val file = File(dir, filtName)
+                             fos = FileOutputStream(file)
                         }
 
                         var sum: Long = 0
                         while (inputStream.read(buf).also { len = it } != -1) {
                             Log.d("downloadProgress", "length::${len}")
-                            fos.write(buf, 0, len)
+                            fos?.write(buf, 0, len)
                             sum += len.toLong()
 
                             // 下载中
@@ -78,7 +82,7 @@ object DownloadRepository {
                             }
 
                         }
-                        fos.flush()
+                        fos?.flush()
                         // 下载完成
                         it.onNext(DownloadProgressInfo().apply {
                             this.isHasDone = true
