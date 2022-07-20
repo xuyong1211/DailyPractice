@@ -19,6 +19,8 @@ class FileOperatorActivity : AppCompatActivity() {
         ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(FileViewModel::class.java)
     }
     val urls = arrayOf(
+        "https://dobestapp.oss-cn-hangzhou.aliyuncs.com/dbt/apptools/ios/HDWallpaper/DynamicWallpaper/1.1/resource/140011.mp4",
+        "https://dobestapp.oss-cn-hangzhou.aliyuncs.com/dbt/apptools/ios/HDWallpaper/DynamicWallpaper/1.1/resource/140032.mp4",
         "https://dobestapp.oss-cn-hangzhou.aliyuncs.com/dbt/apptools/ios/HDWallpaper/DynamicWallpaper/1.1/resource/120068.mp4",
     "https://dobestapp.oss-cn-hangzhou.aliyuncs.com/dbt/apptools/ios/HDWallpaper/DynamicWallpaper/1.1/resource/130001.mp4",
         "https://dobestapp.oss-cn-hangzhou.aliyuncs.com/dbt/apptools/ios/HDWallpaper/DynamicWallpaper/1.1/resource/120015.mp4",

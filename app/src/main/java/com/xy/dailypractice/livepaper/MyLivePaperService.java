@@ -110,6 +110,7 @@ public class MyLivePaperService  extends WallpaperService {
             try {
                 File file = new File(MyApplication.Instant.getApplicationContext().getFilesDir().getAbsolutePath(),"120068.mp4");
                 mMediaPlayer.setDataSource(file.getAbsolutePath());
+                mMediaPlayer.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
                 mMediaPlayer.setLooping(true);
                 mMediaPlayer.setVolume(0, 0);
                 mMediaPlayer.prepare();
